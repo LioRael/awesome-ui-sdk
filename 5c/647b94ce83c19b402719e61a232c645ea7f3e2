@@ -1,0 +1,25 @@
+README.md
+  s_9b725fa5e1cb00::t_d6081433ceb100 9
+website/index.html
+  s_9b725fa5e1cb00::t_d6081433ceb100 8
+website/README.md
+  s_9b725fa5e1cb00::t_d6081433ceb100 17-19
+.github/workflows/website.yml
+  s_9b725fa5e1cb00::t_d6081433ceb100 13,23
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "5c647b94ce83c19b402719e61a232c645ea7f3e2",
+  "prompts": {},
+  "sessions": {
+    "s_9b725fa5e1cb00": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1e428-164e-7842-8a21-ac0eaf56c748",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "LioRael <leo@lenso.dev>"
+    }
+  }
+}
