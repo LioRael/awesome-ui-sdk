@@ -1,0 +1,70 @@
+vercel.json
+  s_9b725fa5e1cb00::t_884fbe9ae81088 3,5
+app/sitemap.ts
+  s_9b725fa5e1cb00::t_49ed7f8b5b3f76 5
+  s_9b725fa5e1cb00::t_884fbe9ae81088 1-4,6
+website/src/App.test.tsx
+  s_9b725fa5e1cb00::t_2a765da76e4499 6-7,14,33,50,61,91-101
+  s_9b725fa5e1cb00::t_c1f5ae207c1e20 102
+app/opengraph-image.tsx
+  s_9b725fa5e1cb00::t_49ed7f8b5b3f76 11-13
+  s_9b725fa5e1cb00::t_884fbe9ae81088 1-10,14-20
+website/src/resources.test.ts
+  s_9b725fa5e1cb00::t_2a765da76e4499 2-3,25-27,29
+app/layout.tsx
+  s_9b725fa5e1cb00::t_884fbe9ae81088 1-41
+tsconfig.json
+  s_9b725fa5e1cb00::t_7237a1f9b69b6f 4-8,15-17,22-26,29-39
+  s_9b725fa5e1cb00::t_884fbe9ae81088 18-21
+  s_9b725fa5e1cb00::t_e1bd3c0a0440b1 27
+website/src/site.ts
+  s_9b725fa5e1cb00::t_884fbe9ae81088 1-3
+package.json
+  s_9b725fa5e1cb00::t_884fbe9ae81088 7-9,16
+vitest.config.ts
+  s_9b725fa5e1cb00::t_2a765da76e4499 8-9
+app/page.tsx
+  s_9b725fa5e1cb00::t_884fbe9ae81088 1-2,4-10,12-15,17-30
+  s_9b725fa5e1cb00::t_49ed7f8b5b3f76 11
+  s_9b725fa5e1cb00::t_e0cffc8c3dd0d4 3,16
+website/src/resources.ts
+  s_9b725fa5e1cb00::t_884fbe9ae81088 47
+.gitignore
+  s_9b725fa5e1cb00::t_884fbe9ae81088 7-8
+website/README.md
+  s_9b725fa5e1cb00::t_e0cffc8c3dd0d4 15,17-19
+  s_9b725fa5e1cb00::t_79a35233f74015 31
+next-env.d.ts
+  s_9b725fa5e1cb00::t_7237a1f9b69b6f 1-7
+app/robots.ts
+  s_9b725fa5e1cb00::t_884fbe9ae81088 1-9
+website/src/content.server.ts
+  s_9b725fa5e1cb00::t_884fbe9ae81088 1-5
+website/src/styles.css
+  s_9b725fa5e1cb00::t_79a35233f74015 54-55
+website/src/AgentBridge.tsx
+  s_9b725fa5e1cb00::t_884fbe9ae81088 1-3,6-11,13-14
+.github/workflows/website.yml
+  s_9b725fa5e1cb00::t_2a765da76e4499 9,13-14,21,25-26
+website/src/App.tsx
+  s_9b725fa5e1cb00::t_79a35233f74015 22,32-37
+  s_9b725fa5e1cb00::t_884fbe9ae81088 1-2,8,43-44,46,49
+bun.lock
+  s_9b725fa5e1cb00::t_0b3172426927de 11,45-98,107-124,161-162,243-244,249-250,253-254,325-326,337,355-358,363-364,404-407
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "41551ea4447671f00a41edc8bfb53bf8481b8238",
+  "prompts": {},
+  "sessions": {
+    "s_9b725fa5e1cb00": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1e428-164e-7842-8a21-ac0eaf56c748",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "LioRael <leo@lenso.dev>"
+    }
+  }
+}
