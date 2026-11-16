@@ -1,0 +1,62 @@
+website/index.html
+  s_9b725fa5e1cb00::t_1ad2ad08a90979 8-9,11-12,17-18
+  s_9b725fa5e1cb00::t_690c6c169cd1bf 1-7,10,13-16,19-21
+website/src/main.tsx
+  s_9b725fa5e1cb00::t_cb20ab80df3aea 1-13
+tsconfig.json
+  s_9b725fa5e1cb00::t_690c6c169cd1bf 1-14
+website/src/App.tsx
+  s_9b725fa5e1cb00::t_cb20ab80df3aea 1-87,89-101,103-130
+  s_9b725fa5e1cb00::t_ba875c55c5ad3c 102
+  s_9b725fa5e1cb00::t_1b7c9a24c53249 88
+website/src/resources.ts
+  s_9b725fa5e1cb00::t_cb20ab80df3aea 1-10,13-26,28-53,55-58
+  s_9b725fa5e1cb00::t_3c4733c2dd48f3 11-12,27,54
+website/README.md
+  s_9b725fa5e1cb00::t_1ad2ad08a90979 1-16,19-29
+  s_9b725fa5e1cb00::t_fe16ea6130d33d 17-18
+package.json
+  s_9b725fa5e1cb00::t_690c6c169cd1bf 1-3,5-10,30-31
+  s_9b725fa5e1cb00::t_fe16ea6130d33d 4
+  s_9b725fa5e1cb00::t_9732078291965e 11-13,27-29
+  s_9b725fa5e1cb00::t_57bc856c84861a 14-26
+website/src/ResourceList.tsx
+  s_9b725fa5e1cb00::t_fa29c4c69261d1 23-24
+  s_9b725fa5e1cb00::t_cb20ab80df3aea 1-19,21-22,25-33
+  s_9b725fa5e1cb00::t_fd696333d7ec34 20
+vite.config.ts
+  s_9b725fa5e1cb00::t_fe16ea6130d33d 6
+  s_9b725fa5e1cb00::t_690c6c169cd1bf 1-5,7-13
+website/src/resources.test.ts
+  s_9b725fa5e1cb00::t_1ad2ad08a90979 1-30
+website/src/App.test.tsx
+  s_9b725fa5e1cb00::t_1ad2ad08a90979 1-86
+.github/workflows/website.yml
+  s_9b725fa5e1cb00::t_fe16ea6130d33d 1-61
+website/src/test/setup.ts
+  s_9b725fa5e1cb00::t_1ad2ad08a90979 1-28
+.gitignore
+  s_9b725fa5e1cb00::t_690c6c169cd1bf 1-5
+website/src/styles.css
+  s_9b725fa5e1cb00::t_cb20ab80df3aea 1-127
+README.md
+  s_9b725fa5e1cb00::t_fa29c4c69261d1 58-59
+bun.lock
+  s_9b725fa5e1cb00::t_ed3c0d05da84cc 1-317
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "5ed082778f5d7bb292922eb3bc5611273915ed12",
+  "prompts": {},
+  "sessions": {
+    "s_9b725fa5e1cb00": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1e428-164e-7842-8a21-ac0eaf56c748",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "LioRael <leo@lenso.dev>"
+    }
+  }
+}
