@@ -1,0 +1,19 @@
+README.md
+  s_285bdf5ec7bbcd::t_4dfa11192c91d9 32,37,39-41,61,65,68-69
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "75ee95b4060285d81397b2cf691caa32547ccf71",
+  "prompts": {},
+  "sessions": {
+    "s_285bdf5ec7bbcd": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1eaa9-416d-7951-8f61-f1329ffdf175",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "LioRael <leo@lenso.dev>"
+    }
+  }
+}
