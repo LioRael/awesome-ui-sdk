@@ -103,3 +103,24 @@ test('server HTML includes every curated resource without browser initialization
   }
   expect(document.querySelector('input[type="search"]')?.getAttribute('value')).toBe('');
 });
+
+test('the hero opens the single Registry search and a featured project can reveal a filtered-out entry', async () => {
+  const user = userEvent.setup();
+  render(<ResourceDirectory resources={resources} />);
+  expect(screen.getAllByRole('searchbox')).toHaveLength(1);
+  const search = screen.getByRole('searchbox');
+  await user.click(screen.getByRole('link', { name: 'Search the registry' }));
+  expect(document.activeElement).toBe(search);
+
+  await user.click(screen.getByRole('radio', { name: /^Tools / }));
+  await user.type(search, 'inspector');
+  await user.click(screen.getByRole('button', { name: 'Perpetual' }));
+  await user.click(screen.getByRole('link', { name: 'Find in registry' }));
+
+  expect(location.hash).toBe('#resource-perpetual');
+  expect(location.search).toBe('?category=showcases');
+  expect((search as HTMLInputElement).value).toBe('');
+  const title = screen.getByRole('heading', { name: 'Perpetual', level: 4 });
+  expect(title.closest('.resource')?.hasAttribute('data-located')).toBe(true);
+  expect(document.activeElement).toBe(title.querySelector('a'));
+});

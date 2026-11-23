@@ -58,7 +58,7 @@ The Next.js site has one source tree:
 
 Use kebab-case for source files and directories, PascalCase for React components, and Next.js's required route filenames. Keep the curated entries in `README.md`; the server reads them during the build and pre-renders the complete collection. Search and category filters run in the browser and restore shared query parameters after hydration. Filtered URLs canonicalize to the homepage.
 
-Follow the visual language of [ui-sdk.dev](https://ui-sdk.dev/): Geist typography, neutral surfaces, square controls, fine dividers, and blue links. Preserve light/dark themes, keyboard navigation, mobile layout, and the UI SDK agent bridge when changing components.
+Use the site’s paper and ink visual language for the atlas and registry. Preserve light/dark themes, keyboard navigation, mobile layout, and the UI SDK agent bridge when changing components.
 
 Vercel deploys `main` to [awesome-ui-sdk.dev](https://awesome-ui-sdk.dev/), running tests before the production build. GitHub Actions checks every push to `main` and every pull request. Cloudflare manages DNS; Vercel serves HTTPS and redirects `www` to the apex domain. Dependencies and the bundled Geist font retain their own licenses.
 
