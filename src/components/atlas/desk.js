@@ -54,48 +54,5 @@ export function mountDesk(desk) {
     });
   }
 
-  const knob = desk.querySelector('.knob');
-  if (!knob) return () => { events.abort(); stopDrags.forEach((stop) => stop()); };
-  const label = knob.querySelector('.knob-number');
-  const caption = desk.querySelector('.knob-caption');
-  let value = 25;
-  let stopKnob;
-  stopDrags.push(() => stopKnob?.());
-  function turn(next) {
-    value = clamp(Math.round(next), 0, 100);
-    knob.setAttribute('aria-valuenow', String(value));
-    knob.style.setProperty('--angle', (-135 + value * 2.7) + 'deg');
-    label.textContent = String(value);
-  }
-  turn(value);
-  listen(knob,'pointerdown', event => {
-    if (!event.isPrimary || event.button !== 0) return;
-    stopKnob?.();
-    knob.focus({ preventScroll: true });
-    caption.click();
-    const initial = value, start = event.clientX;
-    stopKnob = bindDrag(knob, event, {
-      threshold: dragThreshold,
-      cancelOnEscape: true,
-      onStart() { knob.dataset.dragging = ''; },
-      onMove({ x }) { turn(initial + (x - start) * .65); },
-      onEnd(_event, canceled) {
-        delete knob.dataset.dragging;
-        if (canceled) turn(initial);
-        stopKnob = undefined;
-      },
-    });
-  });
-  listen(knob,'keydown', event => {
-    const next = {
-      ArrowDown: value - 5, ArrowLeft: value - 5, ArrowRight: value + 5, ArrowUp: value + 5,
-      Home: 0, End: 100,
-    }[event.key];
-    if (next === undefined) return;
-    event.preventDefault();
-    caption.click();
-    turn(next);
-  });
-
   return () => { events.abort(); stopDrags.forEach((stop) => stop()); };
 }

@@ -10,6 +10,7 @@ import { ResourceList } from './resource-list';
 import { featuredStudies, studyResourceId } from '../lib/featured';
 import { InkText } from './atlas/ink-text';
 import { InkDetail } from './atlas/ink-detail';
+import { PaperKnob } from './atlas/paper-knob';
 import { mountBrush } from './atlas/brush';
 import { mountDesk } from './atlas/desk';
 import { drawInkWash } from './atlas/ink-wash';
@@ -73,10 +74,7 @@ function FeaturedStudies({
       <div className="plate" ref={plate} role="group" aria-label="Featured projects">
         {featured.map((study) => study.toy === 'knob' ? (
           <div className="knob-wrap" role="group" aria-label="audio/ui paper toy" key={study.id}>
-            <div className="knob" role="slider" tabIndex={0} aria-label="Paper knob" aria-valuemin={0} aria-valuemax={100} aria-valuenow={25} aria-describedby="knob-hint">
-              <span className="knob-pointer" aria-hidden="true" />
-              <span className="knob-number" aria-hidden="true">25</span>
-            </div>
+            <PaperKnob onUse={() => setSelection(study.id)} />
             <Button className="toy-name knob-caption" aria-pressed={selection === study.id} aria-controls="figure-details" onClick={() => setSelection(study.id)}>
               <InkText>{study.name}</InkText>
             </Button>

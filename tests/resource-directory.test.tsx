@@ -124,3 +124,26 @@ test('the hero opens the single Registry search and a featured project can revea
   expect(title.closest('.resource')?.hasAttribute('data-located')).toBe(true);
   expect(document.activeElement).toBe(title.querySelector('a'));
 });
+
+test('the paper knob shares its value across the keyboard, the UI SDK agent, and the visual readout', async () => {
+  const user = userEvent.setup();
+  render(<ResourceDirectory resources={resources} />);
+  const knob = screen.getByRole('slider', { name: 'Paper knob' });
+  knob.focus();
+  await user.keyboard('{ArrowRight}');
+  expect(knob.getAttribute('aria-valuenow')).toBe('30');
+  expect(screen.getByRole('link', { name: 'Find in registry' }).getAttribute('href')).toBe('#resource-audio-ui');
+  const entry = agent.snapshot().find((item) => item.label === 'Paper knob');
+  expect(entry).toMatchObject({ component: 'paper-knob', value: 30, actions: ['setValue'] });
+
+  await act(async () => {
+    expect(await agent.act({ steps: [{ ref: 'Paper knob', action: 'setValue', args: [73] }] })).toMatchObject({ ok: true });
+  });
+  expect(knob.getAttribute('aria-valuenow')).toBe('73');
+  expect(knob.querySelector('.knob-number')?.textContent).toBe('73');
+
+  await user.keyboard('{End}');
+  expect(knob.getAttribute('aria-valuenow')).toBe('100');
+  await user.keyboard('{Home}');
+  expect(knob.getAttribute('aria-valuenow')).toBe('0');
+});
