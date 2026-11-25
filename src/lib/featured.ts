@@ -4,6 +4,7 @@ export const studies = [
   { id: 'clickwheel', name: 'Clickwheel', toy: 'player', description: 'Browse tracks with a circular control.', integration: 'click-wheel and player primitives' },
   { id: 'perpetual', name: 'Perpetual', toy: 'watch', description: 'Turn the crown to set the time.', integration: 'watch and crown primitives' },
   { id: 'audio-ui', name: 'audio/ui', toy: 'knob', description: 'Knobs, faders, and pads for browser instruments.', integration: 'knob, fader, and pad primitives' },
+  { id: 'vice-city-ui', name: 'Vice City UI', toy: 'wanted', description: 'Explore a GTA VI-inspired React component kit.', integration: 'React dialog and slider primitives' },
 ] as const;
 
 export function studyResourceId(name: string) {

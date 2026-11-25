@@ -49,15 +49,17 @@ a:focus-visible,button:focus-visible,input:focus-visible,[tabindex]:focus-visibl
 .plate { position:relative; display:grid; grid-template-columns:minmax(0,1.18fr) minmax(0,.82fr); grid-template-rows:1fr .49fr; align-items:center; gap:0 4%; width:100%; max-width:780px; padding:0 4% 0 0; margin:auto; aspect-ratio:1.68 }
 .toy { --x:0px; --y:0px; display:grid; place-items:center; position:relative; background:none; border:0; padding:0; transform:translate(var(--x),var(--y)); cursor:grab; touch-action:none }
 .toy[data-dragging] { z-index:3; cursor:grabbing }
-.toy-player { grid-row:1/3; width:77%; justify-self:center }
-.toy-watch { width:53%; justify-self:center; align-self:end }
+.toy-player { grid-column:1; grid-row:1; width:65%; justify-self:center }
+.toy-watch { grid-column:2; grid-row:1; width:53%; justify-self:center; align-self:end }
 .ink-study { display:block; width:100%; background-image:url(/ink-studies.webp); background-repeat:no-repeat; mix-blend-mode:multiply; pointer-events:none; transition:translate .15s ease }
 .toy-player .ink-study { aspect-ratio:660/885; background-size:268.788% 100.226%; background-position:7.092% 100% }
 .toy-watch .ink-study { aspect-ratio:474/869; background-size:374.262% 102.071%; background-position:90.769% 77.778% }
+.toy-wanted { grid-column:1; grid-row:2; width:80%; max-width:245px; justify-self:center }
+.toy-wanted .ink-study { aspect-ratio:706/258; background:center / contain no-repeat url(/wanted-stars.webp) }
 .toy:active .ink-study { translate:0 2px }
 .toy-name { display:block; margin-top:3px; padding:3px 5px; border:0; border-bottom:1px solid transparent; background:transparent; color:inherit; white-space:nowrap; font:12px/1.35 var(--mono) }
-.toy[aria-pressed=true] .toy-name,.knob-caption[aria-pressed=true] { color:var(--blue); border-bottom-color:var(--blue) }
-.knob-wrap { justify-self:center; display:grid; place-items:center; align-self:center }
+.toy[aria-pressed=true] .toy-name,.toy-name[aria-pressed=true] { color:var(--blue); border-bottom-color:var(--blue) }
+.knob-wrap { grid-column:2; grid-row:2; justify-self:center; display:grid; place-items:center; align-self:center }
 .knob { position:relative; display:grid; place-items:center; width:clamp(49px,6.7vw,90px); aspect-ratio:1; border-radius:50%; border:1px solid #242832; background:repeating-linear-gradient(77deg,#17294f 0 1.5px,#344f87 1.5px 4.5px); box-shadow:2px 4px #3d444852; cursor:ew-resize; touch-action:none; user-select:none }
 .knob::before { content:""; position:absolute; inset:-6% 0 10%; border:1px solid #26282d; border-radius:50%; background:radial-gradient(#243353 21%,transparent 26%) 0 0/3px 3px,#395eaa }
 .knob-pointer { position:absolute; inset:9% 14% 18%; transform:rotate(var(--angle,-60deg)); transition:transform 90ms ease-out }

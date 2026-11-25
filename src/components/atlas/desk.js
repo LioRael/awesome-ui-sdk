@@ -6,7 +6,7 @@ export function mountDesk(desk) {
   const listen = (target, type, callback, capture) => target.addEventListener(type, callback, { signal: events.signal, capture });
   const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
 
-  for (const toy of desk.querySelectorAll('.toy-player,.toy-watch')) {
+  for (const toy of desk.querySelectorAll('.toy')) {
     let left = 0;
     let top = 0;
     let stop;

@@ -1,4 +1,4 @@
-import { act, render, screen, waitFor } from '@testing-library/react';
+import { act, render, screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { createAgent } from '@ui-sdk/react/agent';
 import { expect, test } from 'vitest';
@@ -157,6 +157,28 @@ test('the hero opens the single Registry search and a featured project can revea
   expect((search as HTMLInputElement).value).toBe('');
   const title = screen.getByRole('heading', { name: 'Perpetual', level: 4 });
   expect(title.closest('.resource')?.hasAttribute('data-located')).toBe(true);
+  expect(document.activeElement).toBe(title.querySelector('a'));
+});
+
+test('Vice City UI can be featured and located in the component library registry', async () => {
+  history.replaceState(null, '', '/?category=tools&framework=vue');
+  const user = userEvent.setup();
+  render(<ResourceDirectory resources={resources} />);
+
+  const featured = within(screen.getByRole('group', { name: 'Featured projects' }));
+  const project = featured.getByRole('button', { name: 'Vice City UI' });
+  project.focus();
+  await user.keyboard('{Enter}');
+  expect(project.getAttribute('aria-pressed')).toBe('true');
+
+  const links = within(screen.getByRole('navigation', { name: 'Featured project links' }));
+  expect(links.getByRole('link', { name: 'Open demo' }).getAttribute('href')).toBe('https://vice-city-ui.vercel.app/');
+  expect(links.getByRole('link', { name: 'UI SDK source' }).getAttribute('href')).toContain('/src/ui/overlays/dialog.tsx');
+  await user.click(links.getByRole('link', { name: 'Find in registry' }));
+
+  expect(location.hash).toBe('#resource-vice-city-ui');
+  expect(location.search).toBe('?category=libraries');
+  const title = screen.getByRole('heading', { name: 'Vice City UI', level: 4 });
   expect(document.activeElement).toBe(title.querySelector('a'));
 });
 
